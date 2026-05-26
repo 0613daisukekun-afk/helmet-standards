@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保護具 耐衝撃・耐貫通性能 規格比較</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-50: #EBF3FB;
+    --blue-100: #C5DCEF;
+    --blue-200: #9DC5E4;
+    --blue-600: #1F6FAA;
+    --blue-800: #0D3D62;
+    --gray-50: #F7F7F5;
+    --gray-100: #EDEDE9;
+    --gray-200: #D8D8D2;
+    --gray-400: #A0A09A;
+    --gray-600: #5A5A56;
+    --gray-800: #2C2C2A;
+    --amber-50: #FDF5E6;
+    --amber-100: #F9E0AA;
+    --amber-600: #8A5B0F;
+    --teal-50: #E4F5EE;
+    --teal-100: #B0DFC9;
+    --teal-600: #1A7A55;
+    --teal-800: #0D4733;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    background-color: #F5F5F2;
+    color: var(--gray-800);
+    margin: 0;
+    padding: 0;
+    line-height: 1.75;
+  }
+
+  .page-header {
+    background: #fff;
+    border-bottom: 1px solid var(--gray-200);
+    padding: 2.5rem 3rem 2rem;
+  }
+
+  .header-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    background: var(--blue-50);
+    border: 0.5px solid var(--blue-200);
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0 0 0.4rem 0;
+    line-height: 1.4;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin: 0;
+  }
+
+  .disclaimer {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background: var(--amber-50);
+    border-left: 3px solid var(--amber-600);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.78rem;
+    color: var(--amber-600);
+    line-height: 1.6;
+  }
+
+  .main-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem;
+  }
+
+  /* Tab Navigation */
+  .tab-nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 2rem;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-600);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tab-btn:hover { color: var(--blue-600); }
+
+  .tab-btn.active {
+    color: var(--blue-600);
+    border-bottom-color: var(--blue-600);
+  }
+
+  .tab-icon {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Section Headers */
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0 0 0.3rem 0;
+  }
+
+  .section-desc {
+    font-size: 0.82rem;
+    color: var(--gray-600);
+    margin: 0 0 1.25rem 0;
+  }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border: 0.5px solid var(--gray-200);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .card-header {
+    padding: 1rem 1.5rem;
+    background: var(--gray-50);
+    border-bottom: 0.5px solid var(--gray-200);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .card-header h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--gray-800);
+  }
+
+  .card-tag {
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-impact { background: var(--blue-50); color: var(--blue-600); border: 0.5px solid var(--blue-100); }
+  .tag-penetration { background: var(--teal-50); color: var(--teal-600); border: 0.5px solid var(--teal-100); }
+  .tag-both { background: var(--amber-50); color: var(--amber-600); border: 0.5px solid var(--amber-100); }
+
+  /* Tables */
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.825rem;
+    line-height: 1.5;
+  }
+
+  thead th {
+    background: var(--blue-50);
+    color: var(--blue-800);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-align: left;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--blue-100);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    position: sticky;
+    top: 0;
+  }
+
+  thead th:first-child { border-radius: 0; }
+
+  tbody tr {
+    border-bottom: 0.5px solid var(--gray-100);
+    transition: background 0.1s;
+  }
+
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--gray-50); }
+
+  tbody td {
+    padding: 0.7rem 0.9rem;
+    color: var(--gray-800);
+    vertical-align: top;
+  }
+
+  .td-std {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .td-std a {
+    color: var(--blue-600);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--blue-200);
+  }
+
+  .td-std a:hover {
+    border-bottom-color: var(--blue-600);
+  }
+
+  .td-mono {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.78rem;
+    color: var(--gray-800);
+  }
+
+  .td-scope {
+    font-size: 0.78rem;
+    color: var(--gray-600);
+    max-width: 220px;
+  }
+
+  .val-badge {
+    display: inline-block;
+    background: var(--blue-50);
+    color: var(--blue-800);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.76rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 1px 2px;
+    border: 0.5px solid var(--blue-100);
+  }
+
+  .val-badge.teal {
+    background: var(--teal-50);
+    color: var(--teal-800);
+    border-color: var(--teal-100);
+  }
+
+  .val-na {
+    color: var(--gray-400);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  .row-subhead td {
+    background: var(--gray-50);
+    font-weight: 600;
+    font-size: 0.76rem;
+    color: var(--gray-600);
+    padding: 0.35rem 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 0.5px solid var(--gray-200) !important;
+  }
+
+  /* Notes inline */
+  .note {
+    font-size: 0.73rem;
+    color: var(--gray-600);
+    margin-top: 2px;
+  }
+
+  /* References */
+  .ref-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--gray-200);
+  }
+
+  .ref-section h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem 0;
+    color: var(--gray-800);
+  }
+
+  .ref-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ref-list li {
+    padding: 0.6rem 0;
+    border-bottom: 0.5px solid var(--gray-100);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .ref-list li:last-child { border-bottom: none; }
+
+  .ref-num {
+    display: inline-block;
+    min-width: 28px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.75rem;
+    color: var(--blue-600);
+    font-weight: 500;
+    padding-top: 1px;
+  }
+
+  .ref-body { flex: 1; }
+  .ref-body strong { font-weight: 600; }
+
+  .ref-org {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    margin-top: 1px;
+  }
+
+  /* Responsive */
+  @media (max-width: 800px) {
+    .page-header { padding: 1.5rem 1.25rem 1.25rem; }
+    .main-container { padding: 1.5rem 1.25rem 3rem; }
+    h1 { font-size: 1.2rem; }
+    .tab-btn { padding: 0.65rem 1rem; font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div style="max-width: 1300px; margin: 0 auto; padding: 0;">
+    <div class="header-badge">学術参照資料 · Safety Engineering</div>
+    <h1>保護帽および保護眼鏡<br>耐衝撃・耐貫通性能 規格比較</h1>
+    <p class="subtitle">国内外主要規格（JIS / ANSI / EN）における試験条件・基準値の一覧と比較</p>
+    <div class="disclaimer">
+      ⚠ 本資料は論文考察用の参照資料です。掲載値は各規格の代表的・一般的な要求値に基づきますが、規格の改廃・版更新により内容が変更されている場合があります。実務・設計用途には必ず最新の原典規格をご参照ください。
+    </div>
+  </div>
+</header>
+
+<main class="main-container">
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-helmet" id="tab-helmet" onclick="switchTab('helmet')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 2C7 2 3 7 3 12v2h18v-2c0-5-4-10-9-10z"/>
+        <path d="M3 14h18v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"/>
+      </svg>
+      保護帽（ヘルメット）
+    </button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-eyewear" id="tab-eyewear" onclick="switchTab('eyewear')">
+      <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="7" cy="12" r="3.5"/>
+        <circle cx="17" cy="12" r="3.5"/>
+        <path d="M10.5 12h3M3.5 12H3a1 1 0 01-1-1v0a1 1 0 011-1h.5M20.5 12H21a1 1 0 001-1v0a1 1 0 00-1-1h-.5"/>
+      </svg>
+      保護眼鏡（アイプロテクター）
+    </button>
+  </nav>
+
+  <!-- ===================== HELMET PANEL ===================== -->
+  <div class="tab-panel active" id="panel-helmet" role="tabpanel" aria-labelledby="tab-helmet">
+
+    <p class="section-desc">
+      産業用保護帽（ハードハット・ヘルメット）に関する国内外主要規格の耐衝撃吸収性能および耐貫通性能試験条件の比較。
+      試験方法の違いにより数値の単純比較には注意が必要。
+    </p>
+
+    <!-- ── 耐衝撃吸収性能 ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>耐衝撃吸収性能（Impact Absorption）</h2>
+        <span class="card-tag tag-impact">衝撃吸収試験</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:170px">規格名</th>
+              <th style="min-width:140px">適用範囲・クラス</th>
+              <th style="min-width:130px">落下物質量</th>
+              <th style="min-width:120px">落下高さ</th>
+              <th style="min-width:160px">許容伝達衝撃力（最大値）</th>
+              <th style="min-width:160px">その他条件・備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-subhead"><td colspan="6">日本産業規格（JIS）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-1">JIS T 8131</a><br><span class="note">（飛来・落下物用）</span></td>
+              <td class="td-scope">建設・土木・製造業等の飛来落下物による危険から頭部を保護</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">4,900 N 以下</span></td>
+              <td>試験ヘッドホーム上に載置した帽体を、鋼製ストライカで加撃。内装未装着状態（裸帽体）でも試験実施</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-1">JIS T 8131</a><br><span class="note">（墜落時保護用）</span></td>
+              <td class="td-scope">高所作業における墜落・転落時の頭部保護（PN・PC類）</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">4,900 N 以下</span></td>
+              <td>墜落時保護用も同一の衝撃吸収試験を適用。側面衝撃試験は墜落時保護用に追加要求あり</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">米国規格（ANSI/ISEA）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-2">ANSI/ISEA Z89.1-2014</a><br><span class="note">Type I / Class E, G, C</span></td>
+              <td class="td-scope">Type I：頭頂部のみ保護。Class E（電気用20 kV）、G（一般用2.2 kV）、C（導電性）</td>
+              <td class="td-mono"><span class="val-badge">3.6 kg (8 lb)</span></td>
+              <td class="td-mono"><span class="val-badge">1.83 m (6 ft)</span></td>
+              <td class="td-mono"><span class="val-badge">peak force ≤ 4,500 N</span><br><span class="note">(1,010 lbf)</span></td>
+              <td>試験温度：24°C（標準）、-18°C（低温）、50°C（高温）、紫外線暴露後の計4条件で試験</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-2">ANSI/ISEA Z89.1-2014</a><br><span class="note">Type II</span></td>
+              <td class="td-scope">Type II：頭頂部＋側面保護。斜め・側面方向への衝撃を含む</td>
+              <td class="td-mono"><span class="val-badge">3.6 kg (8 lb)</span></td>
+              <td class="td-mono"><span class="val-badge">1.83 m (6 ft)</span></td>
+              <td class="td-mono"><span class="val-badge">peak force ≤ 4,500 N</span><br><span class="note">+ 側面衝撃試験適用</span></td>
+              <td>側面衝撃試験：2.0 kg 摩擦子を用いた半球形ストライカによる斜め衝撃</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">欧州規格（EN）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-3">EN 397:2012+A1:2012</a><br><span class="note">産業用保護帽</span></td>
+              <td class="td-scope">一般産業用途。オプション：低温（-20°C/-30°C）、高温（150°C）、電気絶縁（440V/1000V）、溶融金属飛散</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">≤ 5,000 N 推奨</span><br><span class="val-badge teal">許容：≤ 15,000 N</span></td>
+              <td>ISO 6941準拠の落下錘試験。5,000 N超15,000 N以下を許容するが、15,000 N超は不合格。試験環境：-10°C～+50°C</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-4">EN 14052:2012+A1:2012</a><br><span class="note">高性能産業用保護帽</span></td>
+              <td class="td-scope">EN 397より高い側面保護性能を要求。建設・林業・レスキュー等</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">頭頂：≤ 5,000 N</span><br><span class="val-badge teal">側面：≤ 5,000 N</span></td>
+              <td>側面衝撃試験を必須要件として規定（EN 397ではオプション）。側面試験：9.1 kgブロックを水平方向に衝突</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-5">EN 12492:2012</a><br><span class="note">登山・クライミング用</span></td>
+              <td class="td-scope">登山・クライミング活動における頭部保護。スポーツ・レジャー用途</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">頂部：1.0 m<br>側面：0.5 m</span></td>
+              <td class="td-mono"><span class="val-badge">≤ 8,000 N</span></td>
+              <td>頂部・前部・後部・側面の複数方向で試験。球形ストライカおよびエッジ形ストライカ両方を使用</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 耐貫通性能 ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>耐貫通性能（Penetration Resistance）</h2>
+        <span class="card-tag tag-penetration">貫通試験</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:170px">規格名</th>
+              <th style="min-width:140px">適用範囲・クラス</th>
+              <th style="min-width:140px">ストライカ形状</th>
+              <th style="min-width:110px">質量</th>
+              <th style="min-width:110px">落下高さ</th>
+              <th style="min-width:180px">合否判定基準</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-subhead"><td colspan="6">日本産業規格（JIS）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-1">JIS T 8131</a><br><span class="note">（飛来・落下物用）</span></td>
+              <td class="td-scope">飛来・落下物用保護帽</td>
+              <td class="td-mono">円錐形<br><span class="note">頂角60°、先端R0.5 mm</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td>ストライカが頭模型（頭皮相当の硬度をもつゴム）に接触してはならない</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-1">JIS T 8131</a><br><span class="note">（墜落時保護用）</span></td>
+              <td class="td-scope">墜落時保護用（PN・PC類）</td>
+              <td class="td-mono">円錐形<br><span class="note">頂角60°、先端R0.5 mm</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td>同上。墜落時保護用はさらに帽体貫通後に頭模型への接触不可</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">米国規格（ANSI/ISEA）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-2">ANSI/ISEA Z89.1-2014</a></td>
+              <td class="td-scope">Type I・II 全クラス共通</td>
+              <td class="td-mono">円錐形<br><span class="note">先端角度60°、先端径0.76 mm</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg (2.2 lb)</span></td>
+              <td class="td-mono"><span class="val-badge">0.91 m (3 ft)</span></td>
+              <td>ストライカが帽体底面（ヘッドフォーム面）に接触しないこと。接触した時点で不合格</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">欧州規格（EN）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-3">EN 397:2012+A1:2012</a></td>
+              <td class="td-scope">産業用保護帽（全製品共通要件）</td>
+              <td class="td-mono">円錐形<br><span class="note">先端角度30°±0.5°、先端径0.5 mm±0.1 mm</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td>ストライカがヘッドフォームに接触しないこと（5 mm 以内への接近も不可）</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-4">EN 14052:2012+A1:2012</a></td>
+              <td class="td-scope">高性能産業用保護帽</td>
+              <td class="td-mono">円錐形<br><span class="note">EN 397準拠と同一</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td>EN 397と同一の合否判定基準。側面位置への貫通試験も実施</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 試験条件比較サマリー ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>規格間 主要パラメータ比較（保護帽）</h2>
+        <span class="card-tag tag-both">横断比較</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>JIS T 8131</th>
+              <th>ANSI/ISEA Z89.1-2014</th>
+              <th>EN 397</th>
+              <th>EN 14052</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">衝撃試験 落下体質量</td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">3.6 kg</span></td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+              <td class="td-mono"><span class="val-badge">5 kg</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">衝撃試験 落下高さ</td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">1.83 m</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">衝撃エネルギー（概算）</td>
+              <td class="td-mono">≈ <span class="val-badge">49 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">64.6 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">49 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">49 J</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">最大許容伝達力</td>
+              <td class="td-mono"><span class="val-badge">4,900 N</span></td>
+              <td class="td-mono"><span class="val-badge">4,500 N</span></td>
+              <td class="td-mono"><span class="val-badge">15,000 N</span><br><span class="note">（推奨 5,000 N）</span></td>
+              <td class="td-mono"><span class="val-badge">5,000 N</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">貫通試験 落下体質量</td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+              <td class="td-mono"><span class="val-badge">1 kg</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">貫通試験 落下高さ</td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">0.91 m</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+              <td class="td-mono"><span class="val-badge">1.0 m</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">側面衝撃試験</td>
+              <td>墜落時保護用のみ（オプション的位置づけ）</td>
+              <td>Type II で必須</td>
+              <td>オプション</td>
+              <td><strong>必須</strong>（必須要件）</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500; white-space:nowrap">温度条件変化試験</td>
+              <td>規定なし</td>
+              <td>-18°C / +50°C / UV暴露後</td>
+              <td>オプション（-20°C / -30°C / +150°C）</td>
+              <td>オプション</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <!-- end helmet panel -->
+
+  <!-- ===================== EYEWEAR PANEL ===================== -->
+  <div class="tab-panel" id="panel-eyewear" role="tabpanel" aria-labelledby="tab-eyewear">
+
+    <p class="section-desc">
+      産業用保護眼鏡・フェイスシールドに関する国内外主要規格の耐衝撃性能試験条件の比較。
+      規格によって試験方法（高速発射弾 vs. 落下鋼球）が根本的に異なる点に注意。
+    </p>
+
+    <!-- ── 耐衝撃性能 ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>耐衝撃性能（Impact Resistance）</h2>
+        <span class="card-tag tag-impact">衝撃試験</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:175px">規格名</th>
+              <th style="min-width:130px">適用範囲・クラス</th>
+              <th style="min-width:130px">試験体（鋼球等）</th>
+              <th style="min-width:110px">鋼球質量</th>
+              <th style="min-width:140px">衝突速度 / 落下高さ</th>
+              <th style="min-width:170px">合否判定基準</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-subhead"><td colspan="6">日本産業規格（JIS）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-6">JIS T 8147:2016</a><br><span class="note">一般用（基本要件）</span></td>
+              <td class="td-scope">一般産業用保護めがね・ゴーグル・フェイスシールド。低エネルギー飛来物に対する保護</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">落下高さ 1.27 m</span><br><span class="note">（≈ 5 m/s 相当）</span></td>
+              <td>レンズ等の破損・飛散・脱落がないこと。試験後にレンズ断片が眼に接触しないこと</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-6">JIS T 8147:2016</a><br><span class="note">耐衝撃性クラス S</span></td>
+              <td class="td-scope">高エネルギー飛来物（鉄粉、チップ等）に対する強化保護。主に機械加工分野</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">衝突速度 45 m/s</span></td>
+              <td>レンズ等の破損・飛散がなく、レンズが眼球面へ接触しないこと</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">米国規格（ANSI/ISEA）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-7">ANSI/ISEA Z87.1-2020</a><br><span class="note">Basic Impact</span></td>
+              <td class="td-scope">標準的な産業用保護眼鏡の最低要件。プラスチックフレーム製品すべてに適用</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ25.4 mm（1 in）</span></td>
+              <td class="td-mono"><span class="val-badge">66.8 g</span><br><span class="note">(2.36 oz)</span></td>
+              <td class="td-mono"><span class="val-badge">落下高さ 1.27 m</span><br><span class="note">(50 in)</span></td>
+              <td>レンズが眼に接触しないこと（接触 = 不合格）。フレームからのレンズ脱落なし</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-7">ANSI/ISEA Z87.1-2020</a><br><span class="note">High Impact（Z87+）</span></td>
+              <td class="td-scope">高衝撃用途（旋盤・グラインダー・ネイルガン周辺等）。製品に「Z87+」マーキング必須</td>
+              <td class="td-mono">鉄球 Φ6.35 mm<br><span class="note">高速発射型</span></td>
+              <td class="td-mono"><span class="val-badge">0.86 g</span></td>
+              <td class="td-mono"><span class="val-badge">45 m/s</span><br><span class="note">(148 ft/s)</span></td>
+              <td>レンズ破損・脱落・眼面への到達がないこと。フレーム試験（高速弾をフレーム正面）も実施</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-7">ANSI/ISEA Z87.1-2020</a><br><span class="note">High Impact（Z87+）プロテクター</span></td>
+              <td class="td-scope">ゴーグル・フェイスシールドの高衝撃試験</td>
+              <td class="td-mono">鉄球 Φ6.35 mm</td>
+              <td class="td-mono"><span class="val-badge">0.86 g</span></td>
+              <td class="td-mono"><span class="val-badge">45 m/s</span></td>
+              <td>ゴーグル内部への鉄球侵入なし。フェイスシールドはシールド背面を通過した場合不合格</td>
+            </tr>
+            <tr class="row-subhead"><td colspan="6">欧州規格（EN）</td></tr>
+            <tr>
+              <td class="td-std"><a href="#ref-8">EN 166:2002</a><br><span class="note">耐衝撃コード「3」</span></td>
+              <td class="td-scope">EN166コード体系：機械的強度 コード「3」＝低エネルギー耐衝撃性</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">落下高さ 1.27 m</span><br><span class="note">（速度 ≈ 5 m/s）</span></td>
+              <td>レンズ破損・レンズフレームからの脱落がないこと</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-8">EN 166:2002</a><br><span class="note">耐衝撃コード「4」</span></td>
+              <td class="td-scope">コード「4」＝中エネルギー耐衝撃性。旋盤・フライス等の機械加工分野</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">速度 45 m/s</span></td>
+              <td>レンズ破損・脱落なし。破損した場合は破片が眼に達してはならない</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-8">EN 166:2002</a><br><span class="note">耐衝撃コード「5」</span></td>
+              <td class="td-scope">コード「5」＝高エネルギー耐衝撃性。爆発・火工品・重工業等の極限環境</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">速度 120 m/s</span></td>
+              <td>高速弾に対してもレンズ等が眼球面へ達しないこと（最も厳しい要件）</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-9">EN ISO 16321-1:2022</a><br><span class="note">（EN 166改訂版系列）</span></td>
+              <td class="td-scope">EN 166を置き換える新規格（ISO 16321シリーズ）。眼・顔面保護具の国際整合規格</td>
+              <td class="td-mono">鋼球<br><span class="note">Φ6 mm（0.86 g）<br>Φ22 mm（43 g）</span></td>
+              <td class="td-mono"><span class="val-badge">0.86 g / 43 g</span></td>
+              <td class="td-mono"><span class="val-badge">速度 45 m/s / 120 m/s</span></td>
+              <td>ISO 16321-3でレンズ耐衝撃性能を規定。試験方法はEN 166に概ね準拠しつつ整合化</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 耐貫通性能（眼鏡） ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>耐貫通性能（Penetration Resistance）— 保護眼鏡</h2>
+        <span class="card-tag tag-penetration">貫通試験</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="min-width:175px">規格名</th>
+              <th style="min-width:140px">適用範囲</th>
+              <th style="min-width:150px">試験体・形状</th>
+              <th style="min-width:130px">試験条件</th>
+              <th style="min-width:200px">合否判定基準・備考</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-std"><a href="#ref-6">JIS T 8147:2016</a></td>
+              <td class="td-scope">鉄くず・スラグ等の先鋭飛来物に対する保護</td>
+              <td class="td-mono">先端角が鋭い鋼製錐体<br><span class="note">（JIS独自の針状試験体）</span></td>
+              <td class="td-mono">規定の落下条件から帽体に向け落下</td>
+              <td><span class="val-na">JIS T 8147は一般産業用眼鏡規格であり、独立した耐貫通試験条項は設けていない。耐衝撃試験が実質的に貫通抵抗を兼ねる</span></td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-7">ANSI/ISEA Z87.1-2020</a></td>
+              <td class="td-scope">High Impact（Z87+）製品</td>
+              <td class="td-mono">鉄球 Φ6.35 mm<br><span class="note">（0.86 g、高速発射）</span></td>
+              <td class="td-mono"><span class="val-badge">45 m/s</span>での衝突</td>
+              <td>高速小径弾が貫通試験を兼ねる設計。レンズ厚等の材料試験（耐貫通個別条項は規定なし）</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-8">EN 166:2002</a><br><span class="note">コード「8」溶融金属</span></td>
+              <td class="td-scope">溶融金属・高温固体への暴露がある環境（溶接・鋳造等）</td>
+              <td class="td-mono">溶融金属（アルミニウム合金）<br><span class="note">所定量をレンズ面に付着させる</span></td>
+              <td class="td-mono">液滴 ≥ 60 g を0.5 m 落下<br>（付着・浸入試験）</td>
+              <td>溶融金属の内部浸入なし。レンズの光学的損傷による視力低下がないこと。貫通概念より「浸入防止」として定義</td>
+            </tr>
+            <tr>
+              <td class="td-std"><a href="#ref-9">EN ISO 16321-1:2022</a></td>
+              <td class="td-scope">ISO 16321 シリーズ</td>
+              <td class="td-mono">高速発射鋼球（Φ6 mm）</td>
+              <td class="td-mono"><span class="val-badge">45 m/s / 120 m/s</span></td>
+              <td>EN 166の耐衝撃コード体系を引き継ぎ、高速小径弾での耐衝撃試験が貫通抵抗を含む概念として統合</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── 規格間比較サマリー ── -->
+    <div class="card">
+      <div class="card-header">
+        <h2>規格間 主要パラメータ比較（保護眼鏡）</h2>
+        <span class="card-tag tag-both">横断比較</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>JIS T 8147</th>
+              <th>ANSI/ISEA Z87.1（Basic）</th>
+              <th>ANSI/ISEA Z87.1（Z87+）</th>
+              <th>EN 166 コード「3」</th>
+              <th>EN 166 コード「4」</th>
+              <th>EN 166 コード「5」</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:500">試験方法</td>
+              <td>落下鋼球</td>
+              <td>落下鋼球</td>
+              <td>高速発射鉄球</td>
+              <td>落下鋼球</td>
+              <td>高速発射鋼球</td>
+              <td>高速発射鋼球</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">鋼球径</td>
+              <td class="td-mono"><span class="val-badge">Φ22 mm</span></td>
+              <td class="td-mono"><span class="val-badge">Φ25.4 mm</span></td>
+              <td class="td-mono"><span class="val-badge">Φ6.35 mm</span></td>
+              <td class="td-mono"><span class="val-badge">Φ22 mm</span></td>
+              <td class="td-mono"><span class="val-badge">Φ22 mm</span></td>
+              <td class="td-mono"><span class="val-badge">Φ22 mm</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">鋼球質量</td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">66.8 g</span></td>
+              <td class="td-mono"><span class="val-badge">0.86 g</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+              <td class="td-mono"><span class="val-badge">43 g</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">衝突速度</td>
+              <td class="td-mono">≈ <span class="val-badge">5 m/s</span><br><span class="note">（落下換算）</span></td>
+              <td class="td-mono">≈ <span class="val-badge">5 m/s</span><br><span class="note">（落下換算）</span></td>
+              <td class="td-mono"><span class="val-badge">45 m/s</span></td>
+              <td class="td-mono">≈ <span class="val-badge">5 m/s</span></td>
+              <td class="td-mono"><span class="val-badge">45 m/s</span></td>
+              <td class="td-mono"><span class="val-badge">120 m/s</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">衝撃エネルギー（概算）</td>
+              <td class="td-mono">≈ <span class="val-badge">0.54 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">0.83 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">0.87 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">0.54 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">43.5 J</span></td>
+              <td class="td-mono">≈ <span class="val-badge">309 J</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">フレーム試験</td>
+              <td>なし</td>
+              <td>なし（Basic）</td>
+              <td>あり（高速発射弾）</td>
+              <td>なし</td>
+              <td>なし</td>
+              <td>なし</td>
+            </tr>
+            <tr>
+              <td style="font-weight:500">側面保護要件</td>
+              <td>規定なし</td>
+              <td>規定なし（Basic）</td>
+              <td>側面フレームへの試験あり</td>
+              <td>なし</td>
+              <td>なし</td>
+              <td>なし</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <!-- end eyewear panel -->
+
+  <!-- ===================== REFERENCES ===================== -->
+  <section class="ref-section" id="references">
+    <h2>参考文献・引用規格一覧</h2>
+    <p style="font-size:0.82rem; color:var(--gray-600); margin:0 0 1.25rem 0;">
+      表内の規格名からのアンカーリンク先。各規格の正式名称・発行機関・改正情報を示す。
+    </p>
+    <ul class="ref-list">
+      <li id="ref-1">
+        <span class="ref-num">[1]</span>
+        <div class="ref-body">
+          <strong>JIS T 8131:2015「保護帽」</strong>
+          <div class="ref-org">日本産業標準調査会（JISC）/ 日本規格協会（JSA）、2015年制定（2019年確認）。産業用保護帽の飛来・落下物用（一般型・電気用）および墜落時保護用（PN・PC類）の性能要件・試験方法を規定。旧規格 JIS T 8131:2000 を全面改正。</div>
+        </div>
+      </li>
+      <li id="ref-2">
+        <span class="ref-num">[2]</span>
+        <div class="ref-body">
+          <strong>ANSI/ISEA Z89.1-2014 "American National Standard for Industrial Head Protection"</strong>
+          <div class="ref-org">International Safety Equipment Association (ISEA) / American National Standards Institute (ANSI)、2014年版（Reaffirmed 2019）。Type I・Type II の頭部保護クラスと電気絶縁クラス（E, G, C）を規定。前版 ANSI/ISEA Z89.1-2009 を改正。</div>
+        </div>
+      </li>
+      <li id="ref-3">
+        <span class="ref-num">[3]</span>
+        <div class="ref-body">
+          <strong>EN 397:2012+A1:2012 "Industrial safety helmets"</strong>
+          <div class="ref-org">European Committee for Standardization (CEN)、2012年。欧州連合指令 89/686/EEC（個人用保護具）に基づく整合規格。EN 397:1995 および EN 397:1995/A1:2000 を全面改正。オプション性能（低温、高温、電気絶縁、溶融金属飛散抵抗等）を規定。</div>
+        </div>
+      </li>
+      <li id="ref-4">
+        <span class="ref-num">[4]</span>
+        <div class="ref-body">
+          <strong>EN 14052:2012+A1:2012 "High performance industrial helmets"</strong>
+          <div class="ref-org">European Committee for Standardization (CEN)、2012年。EN 397を超える側面保護性能を要求する高性能産業用保護帽。建設・採掘・林業・緊急対応分野向け。</div>
+        </div>
+      </li>
+      <li id="ref-5">
+        <span class="ref-num">[5]</span>
+        <div class="ref-body">
+          <strong>EN 12492:2012 "Mountaineering equipment — Helmets for mountaineers — Safety requirements and test methods"</strong>
+          <div class="ref-org">European Committee for Standardization (CEN)、2012年。登山・クライミング用ヘルメットの安全要件。EN 12492:2000 を改正。スポーツ用途特有の多方向衝撃試験（頂部・前後部・側面）を規定。</div>
+        </div>
+      </li>
+      <li id="ref-6">
+        <span class="ref-num">[6]</span>
+        <div class="ref-body">
+          <strong>JIS T 8147:2016「保護めがね」</strong>
+          <div class="ref-org">日本産業標準調査会（JISC）/ 日本規格協会（JSA）、2016年制定。産業用保護めがね・ゴーグル・フェイスシールドの光学性能・耐衝撃性能・材料要件等を規定。旧規格 JIS T 8147:2004 を全面改正。EN 166をベースとしつつ国内整合を図った規格。</div>
+        </div>
+      </li>
+      <li id="ref-7">
+        <span class="ref-num">[7]</span>
+        <div class="ref-body">
+          <strong>ANSI/ISEA Z87.1-2020 "American National Standard for Occupational and Educational Personal Eye and Face Protection Devices"</strong>
+          <div class="ref-org">International Safety Equipment Association (ISEA) / American National Standards Institute (ANSI)、2020年版。Basic ImpactとHigh Impact（Z87+）の二段階体系を規定。前版 ANSI/ISEA Z87.1-2015 を改正。</div>
+        </div>
+      </li>
+      <li id="ref-8">
+        <span class="ref-num">[8]</span>
+        <div class="ref-body">
+          <strong>EN 166:2002 "Personal eye-protection — Specifications"</strong>
+          <div class="ref-org">European Committee for Standardization (CEN)、2002年。欧州における産業用眼・顔面保護具の基本規格。マーキングコード体系（機械的強度コード3・4・5等、用途コード等）を規定。現在 EN ISO 16321 シリーズへの移行期にある。</div>
+        </div>
+      </li>
+      <li id="ref-9">
+        <span class="ref-num">[9]</span>
+        <div class="ref-body">
+          <strong>EN ISO 16321-1:2022 "Eye and face protection for occupational use — Part 1: General requirements"</strong>
+          <div class="ref-org">International Organization for Standardization (ISO) / European Committee for Standardization (CEN)、2022年。EN 166 を段階的に置き換える国際整合規格（ISO 16321 シリーズ：Part 1 一般要件、Part 2 追加要件、Part 3 試験方法）。</div>
+        </div>
+      </li>
+      <li id="ref-10">
+        <span class="ref-num">[10]</span>
+        <div class="ref-body">
+          <strong>厚生労働省「保護帽の規格」（昭和50年 労働省告示第66号）</strong>
+          <div class="ref-org">厚生労働省、最終改正 令和元年。労働安全衛生法第44条の2に基づく保護帽の型式検定規格。JIS T 8131 と連携して産業保護帽の法的要件を定める。</div>
+        </div>
+      </li>
+      <li id="ref-11">
+        <span class="ref-num">[11]</span>
+        <div class="ref-body">
+          <strong>ISO 3873:2017 "Industrial safety helmets"</strong>
+          <div class="ref-org">International Organization for Standardization (ISO)、2017年。産業用安全ヘルメットの国際規格。EN 397 および JIS T 8131 の国際的な対応規格として位置づけられる。</div>
+        </div>
+      </li>
+    </ul>
+
+    <p style="font-size:0.75rem; color:var(--gray-400); margin-top:1.5rem; text-align:right; border-top:0.5px solid var(--gray-100); padding-top:1rem;">
+      本資料作成日：2025年（規格版は各括弧内記載のものに基づく）　|　論文考察用参照資料
+    </p>
+  </section>
+
+</main>
+
+<script>
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    document.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    document.getElementById('tab-' + name).classList.add('active');
+    document.getElementById('tab-' + name).setAttribute('aria-selected', 'true');
+    document.getElementById('panel-' + name).classList.add('active');
+  }
+</script>
+</body>
+</html>
